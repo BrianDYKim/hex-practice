@@ -1,4 +1,4 @@
-rootProject.name = "boilerplate"
+rootProject.name = "hex-practice"
 
 pluginManagement {
     val kotlinVersion = "1.8.22"
