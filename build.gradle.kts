@@ -72,15 +72,17 @@ configure(subprojects.filter { it.name !in nonDependencyProjects }) {
         implementation("org.springframework.boot:spring-boot-starter-web")
         testImplementation("org.springframework.boot:spring-boot-starter-test")
 
-        // JPA
-//        implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-//        runtimeOnly("com.mysql:mysql-connector-j")
+        implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+        runtimeOnly("com.mysql:mysql-connector-j")
 
         // Test
         testImplementation("io.mockk:mockk:$mockkVersion")
         testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion") // for kotest framework
         testImplementation("io.kotest:kotest-assertions-core:$kotestVersion") // for kotest core jvm assertions
         testImplementation("io.kotest:kotest-property:$kotestVersion") // for kotest property test
+
+        // Validation
+        implementation("org.springframework.boot:spring-boot-starter-validation")
 
         kapt("org.springframework.boot:spring-boot-configuration-processor")
     }
