@@ -4,8 +4,6 @@ import org.springframework.validation.BeanPropertyBindingResult
 import org.springframework.validation.BindException
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean
 
-import jakarta.validation.*
-
 /**
  * @author Doyeop Kim
  * @since 2023/12/03
