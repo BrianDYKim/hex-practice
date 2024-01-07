@@ -1,6 +1,7 @@
 package team.me.membership.adapter.out.persistence
 
 import jakarta.persistence.*
+import team.me.membership.domain.Membership
 import java.time.LocalDateTime
 
 /**
@@ -12,16 +13,19 @@ import java.time.LocalDateTime
 class MembershipJpaEntity(
     @get:Id
     @get:GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long,
+    var id: Long = 0L,
     @get:Column(name = "name", nullable = false)
-    var name: String,
+    var name: String = "",
     @get:Column(name = "address", nullable = false)
-    var address: String,
+    var address: String = "",
     @get:Column(name = "email", nullable = false)
-    var email: String,
+    var email: String = "",
     @get:Column(name = "is_valid", nullable = false)
-    var isValid: Boolean,
+    var isValid: Boolean = false,
     @get:Column(name = "is_corp", nullable = false)
-    var isCorp: Boolean,
+    var isCorp: Boolean = false,
 ) : BaseJpaEntity() {
+    override fun toString(): String {
+        return "MembershipJpaEntity(id=$id, name='$name', address='$address', email='$email', isValid=$isValid, isCorp=$isCorp)"
+    }
 }

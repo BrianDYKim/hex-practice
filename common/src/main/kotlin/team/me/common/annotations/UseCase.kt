@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component
  * @author Doyeop Kim
  * @since 2023/12/03
  */
-@Target(AnnotationTarget.TYPE)
+@Target(AnnotationTarget.TYPE, AnnotationTarget.CLASS)
 @Retention(AnnotationRetention.RUNTIME)
 @MustBeDocumented
 @Component

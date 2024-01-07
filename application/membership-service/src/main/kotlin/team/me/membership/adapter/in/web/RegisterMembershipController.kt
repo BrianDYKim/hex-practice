@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import team.me.common.annotations.WebAdapter
 import team.me.membership.adapter.`in`.web.dto.RegisterMembership
+import team.me.membership.application.port.`in`.RegisterMembershipCommand
+import team.me.membership.application.port.`in`.RegisterMembershipUseCase
 
 /**
  * @author Doyeop Kim
@@ -14,13 +16,21 @@ import team.me.membership.adapter.`in`.web.dto.RegisterMembership
 @WebAdapter
 @RestController
 @RequestMapping("/api/membership")
-class RegisterMembershipController {
+class RegisterMembershipController(
+    private val registerMembershipUseCase: RegisterMembershipUseCase
+) {
     @PostMapping("/register")
     fun registerMembership(@RequestBody request: RegisterMembership.Request) {
-        // --request
-
         // --request -> command
+        val command = RegisterMembershipCommand(
+            name = request.name,
+            email = request.email,
+            address = request.address,
+            isValid = true,
+            isCorp = request.isCorp
+        )
 
-        // --usecase
+        // --usecase (command)
+        val membership = registerMembershipUseCase.registerMembership(command)
     }
 }

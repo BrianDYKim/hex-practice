@@ -1,23 +1,21 @@
 package team.me.common.validate
 
-import org.springframework.validation.BeanPropertyBindingResult
-import org.springframework.validation.BindException
-import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean
+import jakarta.validation.ConstraintViolationException
+import jakarta.validation.Validation
 
 /**
  * @author Doyeop Kim
  * @since 2023/12/03
  */
-abstract class SelfValidating<T : Any> {
+open class SelfValidating<T : Any> {
     // Validator 인스턴스를 멤버로 추가
-    protected val validator = LocalValidatorFactoryBean().validator
+    private val validator = Validation.buildDefaultValidatorFactory().validator
 
     protected fun validateSelf() {
-        val errors = BeanPropertyBindingResult(this, "target")
-        validator.validate(this, errors)
+        val violations = validator.validate(this)
 
-        if (errors.hasErrors()) {
-            throw BindException(errors)
+        if (violations.isNotEmpty()) {
+            throw ConstraintViolationException(violations)
         }
     }
 }
