@@ -1,6 +1,5 @@
-package team.me.membership.application.port.`in`
+package team.me.membership.application.port.`in`.command
 
-import team.me.common.annotations.UseCase
 import team.me.membership.domain.Membership
 
 /**

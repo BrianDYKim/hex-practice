@@ -1,8 +1,6 @@
-package team.me.membership.adapter.out.persistence
+package team.me.membership.adapter.out.persistence.jpa.entity
 
 import jakarta.persistence.*
-import team.me.membership.domain.Membership
-import java.time.LocalDateTime
 
 /**
  * @author Doyeop Kim

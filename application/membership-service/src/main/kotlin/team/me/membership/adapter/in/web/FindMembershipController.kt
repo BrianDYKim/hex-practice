@@ -1,6 +1,5 @@
 package team.me.membership.adapter.`in`.web
 
-import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
@@ -8,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController
 import team.me.common.annotations.WebAdapter
 import team.me.common.result.ResultFactory
 import team.me.common.result.Results
-import team.me.membership.application.port.`in`.FindMembershipQuery
+import team.me.membership.application.port.`in`.query.FindMembershipQuery
 import team.me.membership.application.service.FindMembershipService
 import team.me.membership.domain.Membership
 

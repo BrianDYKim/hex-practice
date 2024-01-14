@@ -1,4 +1,4 @@
-package team.me.membership.application.port.`in`
+package team.me.membership.application.port.`in`.query
 
 import team.me.common.validate.SelfValidating
 

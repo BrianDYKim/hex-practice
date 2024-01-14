@@ -1,4 +1,4 @@
-package team.me.membership.adapter.out.persistence
+package team.me.membership.adapter.out.persistence.jpa.entity
 
 import jakarta.persistence.*
 import java.time.LocalDateTime

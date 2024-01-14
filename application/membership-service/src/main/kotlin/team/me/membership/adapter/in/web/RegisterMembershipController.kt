@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import team.me.common.annotations.WebAdapter
 import team.me.membership.adapter.`in`.web.dto.RegisterMembership
-import team.me.membership.application.port.`in`.RegisterMembershipCommand
-import team.me.membership.application.port.`in`.RegisterMembershipUseCase
+import team.me.membership.application.port.`in`.command.RegisterMembershipCommand
+import team.me.membership.application.port.`in`.command.RegisterMembershipUseCase
 
 /**
  * @author Doyeop Kim

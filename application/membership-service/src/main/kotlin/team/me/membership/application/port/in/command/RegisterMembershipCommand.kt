@@ -1,4 +1,4 @@
-package team.me.membership.application.port.`in`
+package team.me.membership.application.port.`in`.command
 
 import jakarta.validation.constraints.AssertTrue
 import jakarta.validation.constraints.NotBlank
