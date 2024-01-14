@@ -2,7 +2,7 @@ package team.me.membership.application.service
 
 import org.springframework.transaction.annotation.Transactional
 import team.me.common.annotations.UseCase
-import team.me.membership.adapter.out.persistence.jpa.mapper.MembershipMapper
+import team.me.membership.adapter.out.persistence.MembershipMapper
 import team.me.membership.application.port.`in`.command.RegisterMembershipCommand
 import team.me.membership.application.port.`in`.command.RegisterMembershipUseCase
 import team.me.membership.application.port.out.RegisterMembershipPort

@@ -1,4 +1,4 @@
-package team.me.membership.adapter.out.persistence.jpa.mapper
+package team.me.membership.adapter.out.persistence
 
 import org.springframework.stereotype.Component
 import team.me.membership.adapter.out.persistence.jpa.entity.MembershipJpaEntity
