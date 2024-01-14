@@ -1,6 +1,8 @@
 package team.me.membership.adapter.out.persistence
 
+import org.springframework.data.repository.findByIdOrNull
 import team.me.common.annotations.PersistenceAdapter
+import team.me.membership.application.port.out.FindMembershipPort
 import team.me.membership.application.port.out.RegisterMembershipPort
 import team.me.membership.domain.Membership
 
@@ -10,7 +12,7 @@ import team.me.membership.domain.Membership
  */
 @PersistenceAdapter
 class MembershipPersistenceAdapter(private val membershipRepository: SpringDataMembershipRepository) :
-    RegisterMembershipPort {
+    RegisterMembershipPort, FindMembershipPort {
     override fun createMembership(
         membershipName: Membership.Companion.MembershipName,
         membershipEmail: Membership.Companion.MembershipEmail,
@@ -27,5 +29,9 @@ class MembershipPersistenceAdapter(private val membershipRepository: SpringDataM
         )
 
         return membershipRepository.save(membershipJpaEntity)
+    }
+
+    override fun findMembership(membershipId: Membership.Companion.MembershipId): MembershipJpaEntity? {
+        return membershipRepository.findByIdOrNull(membershipId.value.toLong())
     }
 }

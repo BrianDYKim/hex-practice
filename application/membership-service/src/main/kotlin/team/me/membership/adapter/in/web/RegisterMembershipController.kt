@@ -15,11 +15,11 @@ import team.me.membership.application.port.`in`.RegisterMembershipUseCase
  */
 @WebAdapter
 @RestController
-@RequestMapping("/api/membership")
+@RequestMapping("/api/membership/register")
 class RegisterMembershipController(
     private val registerMembershipUseCase: RegisterMembershipUseCase
 ) {
-    @PostMapping("/register")
+    @PostMapping()
     fun registerMembership(@RequestBody request: RegisterMembership.Request) {
         // --request -> command
         val command = RegisterMembershipCommand(
